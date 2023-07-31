@@ -1,1 +1,30 @@
-<p>list-invoice works!</p>
+<p>List Invoice work</p>
+
+<table mat-table class="mat-elevation-z8" [dataSource]="elements">
+    <!-- Id Column -->
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef> Id </th>
+      <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+    </ng-container>
+
+    <!-- Firts Name Column -->
+    <ng-container matColumnDef="firstName">
+      <th mat-header-cell *matHeaderCellDef> First Name </th>
+      <td mat-cell *matCellDef="let element"> {{element.firstName}} </td>
+    </ng-container>
+
+    <!-- Last Name Column -->
+    <ng-container matColumnDef="lastName">
+      <th mat-header-cell *matHeaderCellDef> Last Name </th>
+      <td mat-cell *matCellDef="let element"> {{element.lastName}} </td>
+    </ng-container>
+
+    <!-- Email Column -->
+    <ng-container matColumnDef="email">
+      <th mat-header-cell *matHeaderCellDef> Email </th>
+      <td mat-cell *matCellDef="let element"> {{element.email}} </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
